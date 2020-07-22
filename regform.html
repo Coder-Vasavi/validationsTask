@@ -1,0 +1,149 @@
+<html>
+<head>
+<title>Sign Up</title>
+</head>
+<head>
+<script type="text/javascript">
+function validation_for_signup()
+{
+
+                var check_email = /^[\w\.]+@[a-zA-Z_]+?\.[a-zA-Z\.]{2,6}$/;
+                var check_username = /^[a-zA-Z0-9_]{3,16}$/;
+                var check_name = /^[a-zA-Z]{3,16}$/;
+                var check_phone = /^[0-9]{3,16}$/;
+                                if(document.signup.username.value=="")
+                                {
+                                                alert("please enter username");
+                                                document.signup.username.focus();
+                                                return false;
+                                }
+                                else if(check_username.test(document.signup.username.value) == false)
+                                {
+                                                alert('Invalid  username');
+                                                document.signup.username.focus();
+                                                return false;
+                                }
+                                if(document.signup.email.value=="")
+                                {
+                                                alert("please enter email");
+                                                document.signup.email.focus();
+                                                return false;
+                                }
+                                else if(check_email.test(document.signup.email.value) == false)
+                                {
+                                                alert('Invalid  email');
+                                                document.signup.email.focus();
+                                                return false;
+                                }
+                                if(document.signup.phone.value=="")
+                                {
+                                                alert("please enter phone");
+                                                document.signup.phone.focus();
+                                                return false;
+                                }
+                                else if(check_phone.test(document.signup.phone.value) == false)
+                                {
+                                                alert('Invalid  phone');
+                                                document.signup.phone.focus();
+                                                return false;
+                                }
+                                if(document.signup.password.value=='')
+                                {
+                                                alert("Please enter Password.");
+                                                document.signup.password.focus();
+                                                return false;
+                                }
+                                else if(document.signup.password.value.length<6)
+                                {
+                                                alert("Password is too short.");
+                                                document.signup.password.focus();
+                                                return false;
+                                }
+                                if(document.signup.passcnf.value=='')
+                                {
+                                                alert("Please confirm Password.");
+                                                document.signup.passconf.focus();
+                                                return false;
+                                }
+                                else if(document.signup.password.value!=document.signup.passcnf.value)
+                                {
+                                                alert("Password does not match.");
+                                                document.signup.password.focus();
+                                                return false;
+                                }
+				else
+{
+window.open("reglogin.html")
+return true
+}                               
+}
+</script>
+<style>
+body{
+background-image: url('bg.jpg');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+}
+.wrap{
+width:350px;
+margin:auto;
+background:orange;
+margin-top:50px;
+padding:5x;
+}
+form{
+padding:10px;
+font-family:arial;
+border-style:solid;
+margin:10px;
+}
+h2{
+text-align:center;
+background:#C41F35;
+color:white;
+padding:10px;
+border-radius:10px;
+}
+input{
+padding:10px;
+margin:5px;
+border_radius:5px;
+border:none;
+}
+input[type=text],input[type=email],input[type=number],input[type=password]
+{
+width:90%;
+border-radius:10px;
+}
+input[type=submit]
+{
+width:95%;
+background:#33B9FF;
+cursor:pointer;
+font-size:18px;
+font_weight:bold;
+color:white;
+border-radius:10px;
+}
+</style>
+<body>
+<div class="wrap">
+<form name="signup" action="" onSubmit="return validation_for_signup()" method="post">
+<h2>Sign Up Free</h2>
+<input type="text" name="username" placeholder="Your Name"><br>
+<input type="Email" name="email" placeholder="Your Email"><br>
+<input type="Number" name="phone" placeholder="Mobile Number"><br>
+<input type="Password" name="password" placeholder="Password"><br>
+<input type="Password" name="passcnf" placeholder="Confirm Password">
+<br>
+<span style="font-size:18px;">Date of Birth</span><br>
+<input type="date" name="dob"><br>
+<input type="radio" name="male" value="Male">Male
+<input type="radio" name="female" value="Female">Female
+<br>
+<input type="checkbox">I agree to the terms and conditions<br>
+<input type=submit name="submit" value='Submit'>
+</form>
+</body>
+</html>

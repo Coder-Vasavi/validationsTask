@@ -1,0 +1,114 @@
+<!doctype html>  
+<html>  
+<head>  
+<title>Login</title> 
+<script type="text/javascript">
+function validation_for_signup()
+{
+
+                var check_email = /^[\w\.]+@[a-zA-Z_]+?\.[a-zA-Z\.]{2,6}$/;
+                var check_username = /^[a-zA-Z0-9_]{3,16}$/;
+                var check_name = /^[a-zA-Z]{3,16}$/;
+                var check_phone = /^[0-9]{3,16}$/;
+                                if(document.signup.email.value=="")
+                                {
+                                                alert("please enter email");
+                                                document.signup.email.focus();
+                                                return false;
+                                }
+                                else if(check_email.test(document.signup.email.value) == false)
+                                {
+                                                alert('Invalid  email');
+                                                document.signup.email.focus();
+                                                return false;
+                                }
+                                if(document.signup.password.value=='')
+                                {
+                                                alert("Please enter Password.");
+                                                document.signup.password.focus();
+                                                return false;
+                                }
+                                else if(document.signup.password.value.length<6)
+                                {
+                                                alert("Password is too short.");
+                                                document.signup.password.focus();
+                                                return false;
+                                }
+                                else
+{
+window.open("welcome.html")
+return true
+}
+}
+</script>
+<style>
+body{
+background-image: url('bg.jpg');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+}
+.wrap{
+width:350px;
+margin:auto;
+background:orange;
+margin-top:50px;
+padding:5x;
+}
+form{
+padding:10px;
+font-family:arial;
+border-style:solid;
+margin:10px;
+}
+h1{
+text-align:center;
+background:#C41F35;
+color:white;
+padding:10px;
+border-radius:10px;
+}
+h2{
+text-align:center;
+background:#C41F35;
+color:white;
+padding:10px;
+border-radius:10px;
+}
+input{
+padding:10px;
+margin:5px;
+border_radius:5px;
+border:none;
+}
+input[type=email],input[type=password]
+{
+width:90%;
+border-radius:10px;
+}
+input[type=submit]
+{
+width:95%;
+background:red;
+cursor:pointer;
+font-size:18px;
+font_weight:bold;
+color:white;
+border-radius:10px;
+}
+
+</style>
+<body>
+<div class="wrap">
+<form name="signup" action="" onsubmit="return validation_for_signup()" method="post">
+<h2>Login</h2>
+<input type="email" name="email" placeholder="Email"><br>
+<input type="Password" name="password" placeholder="Password"><br>
+<br>
+<input type="checkbox">Remember Me<br>
+<br>
+<input type=submit name="submit" value='Login'>
+</form>
+New User?<button type=button onClick="location.href='regform.html'">Register</button>
+</body>
+</html>                     
